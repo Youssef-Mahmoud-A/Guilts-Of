@@ -393,7 +393,7 @@ label chainedWoman04_01:
 
     "Your voice does not rise above hers."
 
-    You "I was sent by the One who named me [Plater_choice01] to release you from your suffering. You have borne enough."
+    You "I was sent by the One who named me [Player_choice01] to release you from your suffering. You have borne enough."
 
     "You step no closer."
 
@@ -405,7 +405,7 @@ label chainedWoman04_01:
 
     "The veins along her neck recede slightly."
 
-    chained "If this is grace, let it be quiet."
+    Chained "If this is grace, let it be quiet."
 
 
 label chainedWoman04_02:
@@ -417,11 +417,11 @@ label chainedWoman04_02:
     "The air tightens. Her eyes flare.
     \'End?\' she repeats."
 
-    chained "You presume completion. You presume authority over my sin, you lowborn bitch?"
+    Chained "You presume completion. You presume authority over my sin, you lowborn bitch?"
 
     "Her hands clench."
 
-    chained "Pain is not a candle for you to snuff. It is mine,"
+    Chained "Pain is not a candle for you to snuff. It is mine,"
 
     scene chained_woman_angry
 

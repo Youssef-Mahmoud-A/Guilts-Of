@@ -303,7 +303,7 @@ style quick_button_text:
 
 screen navigation():
 
-    vbox:
+    fixed:
         style_prefix "navigation"
 
         #xpos gui.navigation_xpos
@@ -315,38 +315,42 @@ screen navigation():
 
             #textbutton _("Start") action Start()
 
-            imagebutton auto "gui/mm_start_%s.png" xpos 900 ypos 124
+            imagebutton auto "gui/mm_start_%s.png" xpos 882 ypos 125 focus_mask True action Start() hover_sound "audio/ClickShort.ogg"
 
-        else:
+        #else:
 
-            textbutton _("History") action ShowMenu("history")
+            #textbutton _("History") action ShowMenu("history")
 
-            textbutton _("Save") action ShowMenu("save")
+            #textbutton _("Save") action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+        #textbutton _("Load") action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        #textbutton _("Preferences") action ShowMenu("preferences")
+
+        imagebutton auto "gui/mm_options_%s.png" xpos 1766 ypos 881 focus_mask True action ShowMenu("preferences") hover_sound "audio/ClickShort.ogg"
 
         if _in_replay:
 
             textbutton _("End Replay") action EndReplay(confirm=True)
 
-        elif not main_menu:
+        #elif not main_menu:
 
-            textbutton _("Main Menu") action MainMenu()
+            #textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+        #textbutton _("About") action ShowMenu("about")
 
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+        #if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            #textbutton _("Help") action ShowMenu("help")
 
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            #textbutton _("Quit") action Quit(confirm=not main_menu)
+
+            imagebutton auto "gui/mm_quit_%s.png" xpos 1765 ypos 921 focus_mask True action Quit(confirm=not main_menu) hover_sound "audio/ClickShort.ogg"
 
 
 style navigation_button is gui_button
@@ -374,8 +378,8 @@ screen main_menu():
     add gui.main_menu_background
 
     ## This empty frame darkens the main menu.
-    frame:
-        style "main_menu_frame"
+    #frame:
+    #    style "main_menu_frame"
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
@@ -403,7 +407,7 @@ style main_menu_frame:
     xsize 420
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    #background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
     xalign 1.0
@@ -519,7 +523,7 @@ style game_menu_outer_frame:
     bottom_padding 45
     top_padding 180
 
-    background "gui/overlay/game_menu.png"
+    #background "gui/overlay/game_menu.png"
 
 style game_menu_navigation_frame:
     xsize 420
