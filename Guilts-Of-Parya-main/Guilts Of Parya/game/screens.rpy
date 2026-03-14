@@ -151,9 +151,9 @@ style say_label:
     properties gui.text_properties("name", accent=True)
     xalign gui.name_xalign
     #Position for the speaker name
-    xpos -120
+    xpos -90
     yalign 0.5
-    ypos -100
+    ypos -130
     
 #Position for the text in the textbox
 style say_dialogue:
@@ -161,7 +161,7 @@ style say_dialogue:
 
     xpos 300
     xsize 1368
-    ypos -20
+    ypos -30
     yalign 10
     color "#fff"
     size 30
