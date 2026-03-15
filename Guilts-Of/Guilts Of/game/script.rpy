@@ -27,6 +27,8 @@ label dice_roll:
 
 label start:
 
+    play music "audio/AreWeAlone.mp3" fadein 1.0
+
     scene girl_city with Fade(1.5, 0.5, 1.5)
 
     "you see a girl"
@@ -407,6 +409,8 @@ label chainedWoman04_01:
 
     Chained "If this is grace, let it be quiet."
 
+    jump girl_market01
+
 
 label chainedWoman04_02:
 
@@ -427,6 +431,7 @@ label chainedWoman04_02:
 
     "Her portrait shifts — harsher lines, brighter glare."
 
+    jump girl_market01
 
 label chainedWoman04_3:
 
@@ -434,7 +439,71 @@ label chainedWoman04_3:
 
     "You remain silent"
 
-    return
+    jump girl_market01
+
+label girl_market01:
+
+    scene girl_market_walk01
+
+    "You have no map. You have never walked this forsaken land. Yet the certainty sits inside you like a buried instinct.\nYou know where you must go, 
+    and who you must seek next, Iron calling to magnet,"
+
+    "Something primordial guides your steps."
+
+    scene girl_market_walk02
+
+    "Ahead, the air changes, A faint sweetness seeps through the rot cadaverine, old marrow, the chalk-dust perfume of bioceramic skulls long emptied of prayer."
+
+    "Hooks creak overhead. Meat stripped down to its most honest form. No voices barter. No coins change hands.This is not a place where anything is bought or sold."
+
+    scene girl_market_transition
+
+    "You were sent to find him, and you sill find him, just as you were sent to find all the others who deserved to be found. 
+    Not by decree, but by the gravity that pulls the heavy things downward, until they settle where no hand cares to reach."
+
+
+    scene elderly_man
+
+    "Among the mutilated cadavers that littered Pigotha, you hear the  heaving, dusty voice expecting you 
+    “I can smell you, you aren't from here, I can smell the resurrection from your pores!”"
+
+    "You trace the voice to a blind cripple, maybe a beggar,  sitting on the floor, with a gun in his hand, 
+    his legs clearly cannot function, he keeps sniffing like an animal"
+
+    "Heh… I smell you."
+
+    "It comes from somewhere low, crawling through the heat."
+
+    "\"You aren't from here… no… no… I can smell it on you. leaking from your pores…Yes… yes… there it is…\" he whispers. \"That sweet rot.\""
+    
+    menu:
+
+        "Come closer":
+
+            $ Grace += 1
+
+        "Ignore him":
+
+            $ Guilt += 1
+
+
+
+scene girl_market_lookback
+
+"You see him"
+
+scene elderly_man
+
+"hi girl"
+
+scene elderly_man_sad
+
+"A sad elderly man"
+
+scene elderly_man_angry
+
+"An angry elderly man"
+
 
 label death_scene:
 

@@ -255,7 +255,7 @@ screen quick_menu():
 
             textbutton _("Back") action Rollback()
             textbutton _("Log") action ShowMenu('history')
-            #textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
             #textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Save") action ShowMenu('save')
             #textbutton _("Q.Save") action QuickSave()
@@ -1553,7 +1553,7 @@ screen quick_menu():
             style_prefix "quick"
 
             textbutton _("Back") action Rollback()
-            #textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Menu") action ShowMenu()
 

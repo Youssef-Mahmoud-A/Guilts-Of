@@ -16,7 +16,7 @@ define config.name = _("Guilts Of Parya")
 
 ## Disable the skipping option
 
-define config.allow_skipping = False
+define config.allow_skipping = True
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
