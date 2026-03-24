@@ -7,6 +7,7 @@
 define You = Character("You")
 define Man = Character("The Man")
 define Chained = Character("Chained Woman")
+define Elder = Character("Old Man")
 
 default Player_choice01 = ""
 default Player_choice02 = ""
@@ -37,18 +38,38 @@ label start:
 
     "a girl sees you"
 
+    menu:
+
+        "Check the statue":
+
+            jump statue
+
+        "Move to the gate":
+
+            jump gate
+
+label statue:
+
     scene statue
 
-    "Lorem episum"
+    "A statue with an inscription \"Lorem ipsum\""
+
+    jump gate
+
+label gate:
 
     scene city_gate02 
     
     "you see each other"
+
+    jump sitting
  
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
+
+label sitting:
 
     scene sitting
 
@@ -63,7 +84,7 @@ label start:
     "You see him before you reach the gates.\nA man crouched in the dust, knees pressed into stone worn smooth by centuries of exile. The city walls rise behind him like a petrified wave. 
     An incardinate moon—red as a cauterized wound—hangs low and halos his bowed head. His shadow kneels taller than he does.\nWhen he speaks, it is as though the gravel has found a tongue."
 
-    Man "\nWhat ignorant beast dragged you these gates?\nWhat trembling sack of marrow sent you to the threshold of reckoning?\nName the hand that hurled you into our shadow."
+    Man "What ignorant beast dragged you these gates?\nWhat trembling sack of marrow sent you to the threshold of reckoning?\nName the hand that hurled you into our shadow."
 
     menu:
 
@@ -245,6 +266,8 @@ label SittingMan02:
 return
 
 label SittingMan02_01:
+
+    scene hand_circle
     
     You "I come to bring things to an end.\nFor better or for worse."
 
@@ -259,6 +282,8 @@ label SittingMan02_01:
     jump ManEnd
 
 label SittingMan02_02:
+
+    scene hand_x
     
     You "I come to save what can still be saved."
 
@@ -271,6 +296,8 @@ label SittingMan02_02:
     jump ManEnd
 
 label SittingMan02_03:
+
+    scene hand_star
     
     You "I come to purify all the putrescent spleens!"
 
@@ -334,21 +361,21 @@ label chainedWoman02:
         
         "I not understand what you are saying":
 
-            "I am asking if you, fledgling thing— you whose voice has not yet cracked upon real grief, whose blood has not learned the taste of ash. What salvation do you presume to offer me?
+            Chained "I am asking if you, fledgling thing— you whose voice has not yet cracked upon real grief, whose blood has not learned the taste of ash. What salvation do you presume to offer me?
             \nWhat limb of the broken world have you ever lifted? For seven years I have borne the cairn of my husband, my mother,and the child who perished unnamed within me. Seven years more are decreed."
 
             jump chainedWoman03
         
         "I have nothing, but the dagger on my back.":
 
-            "So you bring me a cruel remedy, then where did you get the gall to inquire after my weight? creature with a whiny voice, and beleaguered blood,You have known inconvenience, not ruin. 
+            Chained "So you bring me a cruel remedy, then where did you get the gall to inquire after my weight? creature with a whiny voice, and beleaguered blood,You have known inconvenience, not ruin. 
             For seven years I have borne the cairn of my husband, my mother,and the child who perished unnamed within me. Seven years more are decreed."
 
             jump chainedWoman03
 
         "I can help remove the rocks off your back.":
             
-            "And what inherent mercy compels you, child of exalted roots, that you might carry the dust of others and not be buried with it?
+            Chained "And what inherent mercy compels you, child of exalted roots, that you might carry the dust of others and not be buried with it?
             \nFor seven years I have borne the cairn of my husband, my mother,and the child who perished unnamed within me. Seven years more are decreed.
             \nAnd all through time we had sufferers. And if it's our birthright to suffer then let it be. And if it's our blight to be lied to continually, 
             blight growing more, then it's also our right. So see the mucous and the veins thicken."
@@ -443,66 +470,185 @@ label chainedWoman04_3:
 
 label girl_market01:
 
-    scene girl_market_walk01
+    scene girl_market_transition   
 
-    "You have no map. You have never walked this forsaken land. Yet the certainty sits inside you like a buried instinct.\nYou know where you must go, 
-    and who you must seek next, Iron calling to magnet,"
+    "The air alters. A faint sweetness intrudes upon the cadaverine rot—the sour reek of opened marrow, 
+    the chalk-dust incense of bioceramic skulls long emptied of prayer. Above you, iron hooks sway and creak like censers in a desecrated liturgy. 
+    Life—if it may still be named so—reveals itself here in its most honest form."
 
-    "Something primordial guides your steps."
+    menu: 
+
+        "Seek The Martyr of Hate":
+
+            jump martyr_of_hate
+
+
+        "Explore the Marketplace":
+
+            jump explore_market
+
+label explore_market:
+
+    scene explore_market01
+
+    "exploring the market1"
+
+    scene explore_market02
+
+    "exploring the market2"
+
+    jump martyr_of_hate
+
+label martyr_of_hate:
+
+    
+    scene girl_market_walk01  
+
+    "And as you pass, their stares pierce you—not with curiosity, but with a dull, forensic knowing, Your skull, 
+    not yet fully ripened into its final shape, draws their gaze like a wound draws flies."
+
+    "No one speaks to you. No one touches you."
 
     scene girl_market_walk02
 
-    "Ahead, the air changes, A faint sweetness seeps through the rot cadaverine, old marrow, the chalk-dust perfume of bioceramic skulls long emptied of prayer."
+    "Only murmurs, thin, papery whispers—flutter in your wake"
 
-    "Hooks creak overhead. Meat stripped down to its most honest form. No voices barter. No coins change hands.This is not a place where anything is bought or sold."
+    "All your preparation—your childhood's severities, your youth's disciplines, the catechisms etched into atom and nerve—collapse here into insufficiency.
+    You were honed for this. Filed down, sanctified, emptied, and refilled until your very marrow recited it.And still, it is not enough.
+    The reality exceeds the scripture. No illumination, no illumination ever rendered the texture of it—the industrial banality of gore"
 
-    scene girl_market_transition
+    scene girl_standing_market
 
-    "You were sent to find him, and you sill find him, just as you were sent to find all the others who deserved to be found. 
-    Not by decree, but by the gravity that pulls the heavy things downward, until they settle where no hand cares to reach."
+    "You find him where your spleen insisted he would be."
 
+    "Not by sight—but by that deeper organ-memory, He has already noticed you. Or rather—He has already smelled you."
 
-    scene elderly_man
+    scene girl_looking_market
 
-    "Among the mutilated cadavers that littered Pigotha, you hear the  heaving, dusty voice expecting you 
-    “I can smell you, you aren't from here, I can smell the resurrection from your pores!”"
+    "A solitary, crawling aberration in in a place where carcasses hang like vestments And there he is— Withdrawn from it all in a monk's parody of seclusion.
+    He resembles a beggar, or something more primitive: a first attempt at man, abandoned mid-creation."
 
-    "You trace the voice to a blind cripple, maybe a beggar,  sitting on the floor, with a gun in his hand, 
-    his legs clearly cannot function, he keeps sniffing like an animal"
+    "He has no lower half. From the waist down, his body gives way not to absence—but to growth. A small garden blooms from him. 
+    Stems, roots, pale blossoms pushing outward where organs should have continued, anchoring him into the earth as though he had chosen to be planted rather than buried."
 
-    "Heh… I smell you."
+    scene elder01
 
-    "It comes from somewhere low, crawling through the heat."
+    "\"I would know that scent,\" he says, as I know the prayer of Our Lady the Hurtless."
 
-    "\"You aren't from here… no… no… I can smell it on you. leaking from your pores…Yes… yes… there it is…\" he whispers. \"That sweet rot.\""
-    
+    "His head tilts—not toward your face, but toward your circulation. \"You are not of this place. No… no… it is impossible. Nothing born here could carry such a fragrance.\""
+
+    "He inhales, deeply."
+
+    Elder "You have traveled far. I can smell it unraveling in your arteries… threaded through your flesh… clinging to the roof of your mouth, and inside your iris"
+
+    "A pause.."
+
+    Elder "Blood."
+
+    "Another inhale—sharper, desperate."
+
+    Elder "Within… and without.\nHeh…\nI smell you."
+
+    "His blind eyes—white, obliterated—turn with impossible precision.\nHe tries to lift himself up in futility."
+
+    Elder "The scent of amputated resurrection, The perfume of mutilated deliverance."
+
+    "You feel it then, Not fear, not entirely, But exposure.\nAs though you existed without consent"
+
+    "\"You carry it poorly,\" he murmurs."
+
+    "A soft, almost pitying judgment."
+
+    Elder "Chimeras always do.\nIt escapes you… leaks from you… like heat from fresh slaughter."
+
+    You "What?"
+
+    "\"I would know that scent anywhere,\" he continues, voice gaining a brittle fervor."
+
+    Elder "Blood. Perfect blood. Red, vital, unspent."
+
+    "His lips twitch, remembering."
+
+    "\"I built an arsenal from it. Not of iron—no—but of men. Real men. Men swollen with circulation, with surplus, with the obscene generosity of flowing life.\"
+    His voice sharpens, almost proud."
+
+    Elder "Men who found no satisfaction in women, nor in books. Men whose hunger coiled like vipers, driving them beyond the last ruins of reason.\n
+    A brotherhood of arteries.\nA congregation of overflow."
+
+    "They could not live on bread. They could not drink wine. Poetry did not touch them. Beauty did not slow them. They were abundance made flesh, Angels—at times.\nDemons—more often."
+
+    "\"And they longed—\"\nHe inhales.\n\"—for the crucifix.\"\n\"And I gave them death.\""
+
+    Elder "You know the secret of command?"
+
     menu:
 
-        "Come closer":
+        "Yes":
+
+            Elder "then speak."
+
+            jump answers
+
+        "No":
+
+            Elder "Then think. Think until it wounds you."
+
+            jump answers
+        
+        "I am not interested in the theology of beasts":
+
+            jump answers
+
+label answers:
+
+    "Three Answers Form in You"
+
+    menu:
+
+        "Authority":
+
+            Elder "Wrong.\nCommand is not authority."
+
+            jump command_answer
+
+        "Intelligence":
+
+            Elder "Wrong.\nCommand is not intelligence."
+
+            jump command_answer
+
+
+
+label command_answer:
+        
+    Elder "It is measure.\nIt is accounting."
+
+    menu:
+
+        "hold his hands":
 
             $ Grace += 1
 
-        "Ignore him":
+            scene hands_held
+
+            "You have never felt such coldness, such burning coldness"
+
+        "Don't hold his hand":
 
             $ Guilt += 1
 
+            scene hands_not_held
+
+            "Stuck in this putrid existence, how come the bird can fly where I could not walk"
 
 
-scene girl_market_lookback
 
-"You see him"
+label hands_held:
 
-scene elderly_man
 
-"hi girl"
 
-scene elderly_man_sad
+label hands_not_held:
 
-"A sad elderly man"
-
-scene elderly_man_angry
-
-"An angry elderly man"
 
 
 label death_scene:
