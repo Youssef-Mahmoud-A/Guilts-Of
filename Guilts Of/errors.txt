@@ -1,0 +1,14 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 596: end of line expected.
+    Elder "A brotherhood of arteries." \nA congregation of overflow."
+                                       ^
+
+File "game/script.rpy", line 599: expected statement.
+    Beauty did not slow them. They were abundance made flesh, Angels—at times. Demons—more often."
+                            ^
+
+Ren'Py Version: Ren'Py 8.5.2.26010301
+Fri Mar 27 21:36:26 2026
