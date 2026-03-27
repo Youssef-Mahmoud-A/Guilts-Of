@@ -470,11 +470,17 @@ label chainedWoman04_3:
 
 label girl_market01:
 
-    scene girl_market_transition   
+    scene girl_market_transition with Fade(1.5, 0.5, 1.5)
+    
+    window hide
+    pause 10.0 
+    window auto
 
-    "The air alters. A faint sweetness intrudes upon the cadaverine rot—the sour reek of opened marrow, 
-    the chalk-dust incense of bioceramic skulls long emptied of prayer. Above you, iron hooks sway and creak like censers in a desecrated liturgy. 
-    Life—if it may still be named so—reveals itself here in its most honest form."
+    "The air alters.\nA faint sweetness intrudes upon the cadaverine rot—the sour reek of opened marrow, 
+    the chalk-dust incense of bioceramic skulls long emptied of prayer." 
+
+    "Above you, iron hooks sway and creak like censers in a desecrated liturgy. 
+    \nLife, if it may still be named so, reveals itself here in its most honest form."
 
     menu: 
 
@@ -504,82 +510,107 @@ label martyr_of_hate:
     
     scene girl_market_walk01  
 
-    "And as you pass, their stares pierce you—not with curiosity, but with a dull, forensic knowing, Your skull, 
+    "As you pass, their stares pierce you—not with curiosity, but with a dull, forensic knowing, Your skull, 
     not yet fully ripened into its final shape, draws their gaze like a wound draws flies."
 
     "No one speaks to you. No one touches you."
 
     scene girl_market_walk02
 
-    "Only murmurs, thin, papery whispers—flutter in your wake"
+    "Only murmurs, thin, papery whispers, flutter in your wake.\nAll your preparation, your childhood's severities, 
+    your youth's disciplines, the catechisms etched into atom and nerve, collapse here into insufficiency."
 
-    "All your preparation—your childhood's severities, your youth's disciplines, the catechisms etched into atom and nerve—collapse here into insufficiency.
-    You were honed for this. Filed down, sanctified, emptied, and refilled until your very marrow recited it.And still, it is not enough.
-    The reality exceeds the scripture. No illumination, no illumination ever rendered the texture of it—the industrial banality of gore"
+
+    "You were honed for this, filed down, sanctified, emptied, and refilled until your very marrow recited it and still, it is not enough.
+    The reality exceeds the scripture. No illumination, no illumination ever rendered the texture of it, the industrial century of gore"
 
     scene girl_standing_market
 
-    "You find him where your spleen insisted he would be."
-
-    "Not by sight—but by that deeper organ-memory, He has already noticed you. Or rather—He has already smelled you."
+    "You find him where your spleen insisted he would be... {w= 3.0} {cps=30}Not by sight, but by that deeper organ-memory, He has already noticed you.
+     Or rather, he has already smelled you."
 
     scene girl_looking_market
 
-    "A solitary, crawling aberration in in a place where carcasses hang like vestments And there he is— Withdrawn from it all in a monk's parody of seclusion.
+    "A solitary, crawling aberration in in a place where carcasses hang like vestments And there he is, withdrawn from it all in a monk's parody of seclusion.
     He resembles a beggar, or something more primitive: a first attempt at man, abandoned mid-creation."
 
-    "He has no lower half. From the waist down, his body gives way not to absence—but to growth. A small garden blooms from him. 
+    "He has no lower half. From the waist down, his body gives way not to absence—but to growth. A small garden blooms from him; 
     Stems, roots, pale blossoms pushing outward where organs should have continued, anchoring him into the earth as though he had chosen to be planted rather than buried."
 
     scene elder01
 
-    "\"I would know that scent,\" he says, as I know the prayer of Our Lady the Hurtless."
+    Elder "I would know that scent... {w=3.0} {cps=30}as I know the prayer of Our Lady the Hurtless."
 
-    "His head tilts—not toward your face, but toward your circulation. \"You are not of this place. No… no… it is impossible. Nothing born here could carry such a fragrance.\""
+    "His head tilts, not toward your face, but toward your circulation." 
+    
+    Elder "You are not of this place. No… no… it is impossible. Nothing born here could carry such a fragrance."
 
     "He inhales, deeply."
 
     Elder "You have traveled far. I can smell it unraveling in your arteries… threaded through your flesh… clinging to the roof of your mouth, and inside your iris"
 
-    "A pause.."
+    "{cps=20} ........."
 
     Elder "Blood."
 
-    "Another inhale—sharper, desperate."
+    "Another inhale, sharper, desperate."
 
-    Elder "Within… and without.\nHeh…\nI smell you."
+    Elder "Within… and without. {w=1.0} {cps=20} Heh…"
 
-    "His blind eyes—white, obliterated—turn with impossible precision.\nHe tries to lift himself up in futility."
+    Elder "I smell you."
 
-    Elder "The scent of amputated resurrection, The perfume of mutilated deliverance."
+    scene girl_market_cut
 
-    "You feel it then, Not fear, not entirely, But exposure.\nAs though you existed without consent"
+    "His blind eyes, white, obliterated, turn with impossible precision."
 
-    "\"You carry it poorly,\" he murmurs."
+    Elder "The scent of amputated resurrection, the perfume of mutilated deliverance."
+
+    "He tries to lift himself up in futility."
+
+    scene elder_lift_up with Fade(0.60, 0.10, 1.0)
+
+    "You feel it then, Not fear, not entirely, But exposure.\nAs though you existed without consent."
+
+    Elder "You carry it poorly"
 
     "A soft, almost pitying judgment."
 
-    Elder "Chimeras always do.\nIt escapes you… leaks from you… like heat from fresh slaughter."
+    Elder "Chimeras always do. It escapes you… leaks from you… like heat from fresh slaughter."
 
     You "What?"
 
-    "\"I would know that scent anywhere,\" he continues, voice gaining a brittle fervor."
+    Elder "I would know that scent anywhere."
 
     Elder "Blood. Perfect blood. Red, vital, unspent."
 
+    scene girl_market_crouch with Fade(0.60, 0.10, 1.0)
+
     "His lips twitch, remembering."
 
-    "\"I built an arsenal from it. Not of iron—no—but of men. Real men. Men swollen with circulation, with surplus, with the obscene generosity of flowing life.\"
-    His voice sharpens, almost proud."
+    Elder "I built an arsenal from it. Not of iron, no, but of men. Real men. 
+    Men swollen with circulation, with surplus, with the obscene generosity of flowing life."
 
-    Elder "Men who found no satisfaction in women, nor in books. Men whose hunger coiled like vipers, driving them beyond the last ruins of reason.\n
-    A brotherhood of arteries.\nA congregation of overflow."
+    "His voice sharpens, almost proud."
 
-    "They could not live on bread. They could not drink wine. Poetry did not touch them. Beauty did not slow them. They were abundance made flesh, Angels—at times.\nDemons—more often."
+    Elder "Men who found no satisfaction in women, nor in books. 
+    Men whose hunger coiled like vipers, driving them beyond the last ruins of reason."
 
-    "\"And they longed—\"\nHe inhales.\n\"—for the crucifix.\"\n\"And I gave them death.\""
+    scene girl_elder_head
 
-    Elder "You know the secret of command?"
+    Elder "A brotherhood of arteries. A congregation of overflow."
+
+    Elder "They could not live on bread. They could not drink wine. Poetry did not touch them. 
+    Beauty did not slow them. They were abundance made flesh, Angels, at times. Demons, more often."
+
+    Elder "And they longed, for the crucifix, and I gave them death."
+
+    scene girl_hand_blood
+
+    "There is blood on my hand"
+
+    scene girl_blood_touch
+
+    Elder "You know the secret of being a good commander?"
 
     menu:
 
@@ -597,31 +628,72 @@ label martyr_of_hate:
         
         "I am not interested in the theology of beasts":
 
+            Elder "Fair"
+
             jump answers
 
 label answers:
 
-    "Three Answers Form in You"
+    "Three answers form in you"
 
     menu:
 
         "Authority":
 
-            Elder "Wrong.\nCommand is not authority."
+            Elder "Wrong{cps= 30}... Command is not authority."
 
-            jump command_answer
+            jump commander_answer
 
         "Intelligence":
 
-            Elder "Wrong.\nCommand is not intelligence."
+            Elder "Wrong{cps= 30}... Command is not intelligence."
 
-            jump command_answer
+            jump commander_answer
+
+        "Faith":
+
+            Elder "Wrong{cps= 30}... Command is not intelligence."
+
+            jump commander_answer
 
 
-
-label command_answer:
+label commander_answer:
         
-    Elder "It is measure.\nIt is accounting."
+    Elder "It is measure. It is accounting."
+
+    Elder "To command… is to understand that every order you give is a grave already dug, and to give it anyway."
+
+    "His nose twitching as your scent reaches him once more."
+    
+    Elder "{cps=20} Ah… Yes… There it is again…"
+
+    Elder "Like a dog catching fresh game. The morning after the burning of Laith Kheifar. I looked at the sky, and felt nothing but distance."
+
+    Elder "For nearly four centuries, no rain fell—not a single drop. Then one night, in the east, the heavens broke. 
+    It rained as if only heaven could bear such weight. They say God could no longer hold back his tears"
+
+    Elder "You smell of fire and salt. Of flowering corpses. Of bells tolling over open earth, and shovels striking wet soil in the dark."
+
+    Elder "Twelve thousand marched beneath my banners, twelve thousand sons, husbands, boys. What they found instead… was me."
+
+    "He exhales, slow as a dying wind."
+
+    Elder "Seven returned. Seven men out of twelve thousand."
+
+    Elder "I sowed the womb of the earth with blood and tears; I inseminated Gaia with ruin. I brought grief to their gods and desolation to 
+    their houses, and in the night, they come, twelve thousand footfalls rising from the dark. their faces split open in agony."
+
+    Elder "I lived as I knew how, and now my sins unmake me, thread by thread, sinew by sinew."
+
+    Elder "So… you. Slave of Morthiel. You stink of christened alumina and sanctified dust. 
+    Have you come at last to finish what was decreed? To bend yourself to command?"
+
+    Elder "I have endured here eight hundred years. I counted each one."
+
+    Elder "Did they teach you Arabic in that myrrh-plagued cathedral of yours? Did they whisper to you that khalas is both ending and 
+    deliverance—that enough is the only mercy left to man? There is no peace in persistence. Only delay."
+
+    "You instinctively get down to his level, as he open his hands to you, begging for your touch."
 
     menu:
 
@@ -642,6 +714,9 @@ label command_answer:
             "Stuck in this putrid existence, how come the bird can fly where I could not walk"
 
 
+scene black_screen
+
+"wait"
 
 label hands_held:
 
