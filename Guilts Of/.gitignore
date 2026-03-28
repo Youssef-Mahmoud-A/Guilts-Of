@@ -26,4 +26,4 @@
 /strings.json
 
 # Ignoring zip files
-.zip
+*.zip
