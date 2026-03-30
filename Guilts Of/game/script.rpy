@@ -484,12 +484,12 @@ label girl_market01:
 
     menu: 
 
-        "Seek The Martyr of Hate":
+        "Find Ishaq":
 
             jump martyr_of_hate
 
 
-        "Explore the Marketplace":
+        "Explore the Market":
 
             jump explore_market
 
