@@ -5,7 +5,7 @@
 
 
 define You = Character("You")
-define Man = Character("The Man")
+define Man = Character("Goetia")
 define Chained = Character("Chained Woman")
 define Elder = Character("Old Man")
 
@@ -30,13 +30,25 @@ label start:
 
     play music "audio/AreWeAlone.mp3" fadein 1.0
 
+    window hide
+    $ _dismiss_pause = False
     scene girl_city with Fade(1.5, 0.5, 1.5)
+    $ renpy.pause(3.5, hard=True)
+    $ _dismiss_pause = True
+    window auto
 
-    "you see a girl"
+    "You behold the city from afar."
+
+    "From the outer gate it feigns smallness{cps=30}... like a thing that would not be feared, but the lie rots as you inch closer, It swells in the sight, 
+    unfolding without end, until it stands like a continent raised from the bones of the world."
+    
+    "Its walls are sheer as cliffs, pale as flayed ivory. Within them festers a multitude, living things and dead things, so mingled they are no longer apart."
+
+    "All is salt{cps=20}... All is wet... All is heavy."
+
+    "The very air clings to your throat like cancerous plasma."
 
     scene city_gate01 with dissolve
-
-    "a girl sees you"
 
     menu:
 
@@ -52,7 +64,9 @@ label statue:
 
     scene statue
 
-    "A statue with an inscription \"Lorem ipsum\""
+    "A statue stands by the path, a gargoyle, bowed, as if in grief or worship. At its base, words are carved deep:"
+
+    "{cps=20}A paramour, of the sadness of creation from tears and mortars. After all these years and still, still learning, how to properly die."
 
     jump gate
 
@@ -60,14 +74,11 @@ label gate:
 
     scene city_gate02 
     
-    "you see each other"
+    "A man kneels before the gate, pale, naked."
+
 
     jump sitting
  
-
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
 
 label sitting:
 
@@ -77,14 +88,64 @@ label sitting:
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
+    "As you draw near, he speaks, though he does not turn."
 
+    Man "So. They have sent you."
 
-    # These display lines of dialogue.
+    "When he speaks, it is as though the gravel has found a tongue."
 
-    "You see him before you reach the gates.\nA man crouched in the dust, knees pressed into stone worn smooth by centuries of exile. The city walls rise behind him like a petrified wave. 
-    An incardinate moon—red as a cauterized wound—hangs low and halos his bowed head. His shadow kneels taller than he does.\nWhen he speaks, it is as though the gravel has found a tongue."
+    Man "I wondered who would replace me. I did not expect{cps=10}... this."
 
-    Man "What ignorant beast dragged you these gates?\nWhat trembling sack of marrow sent you to the threshold of reckoning?\nName the hand that hurled you into our shadow."
+    "His back tightens."
+
+    Man "Tell me, what is more insulting?{cps=10} That they sent a woman... or that they sent a child?"
+
+    Man "Was my failure so profound, that they now must place their faith in you?"
+
+    menu:
+
+        "What is wrong with being a woman?":
+
+            Man "The womb is a treacherous vessel. It carries life… or it carries disease."
+
+        "I am not a child.":
+
+            Man "You wear youth like a mark. Sixteen, perhaps seventeen. The difference means nothing here."
+
+    Man "Hear me well."
+
+    Man "{cps=20}Whatever you have been told, forget it. It is worse, not in count, but in kind.
+    From the dust beneath your feet to the cold fires above, all things that devour come here to rest. Even the light here has teeth."
+
+    Man "{cps=20}All your prayers, your signs, your holy teachings, they are wind.
+    They shall tear through your guts and be as nothing. Your balm and cross are mere furnishings in the bellowing of the earth."
+
+    menu:
+
+        "You are blaspheming.":
+
+            You "Your failure is your own. It is not the undoing of all things."
+
+            "He laughs, bitterly."
+
+            Man "My failure? No, ours. The thousands that came before me, the legions yet to come, beginning with you.
+            You can hear their agonies in Basilidies' cube, begging for mercy, cursing priests and altars.
+            Tearing at the horse's skull, in the breathing grave between bile and burial."
+
+        "You should leave this place now.":
+
+            You "Then go. Return to the one who sent you. Your duty is done."
+
+            Man "Return?"
+
+            "He lets out a hollow breath."
+
+            Man "All who enter are sealed, pressed between orichalcum and cinders, marked with the marred finger of her name, 
+            name unspoken, for it has none.The holy exsanguination, that incessant trembling of anything that dares to hide a spine."
+            
+            Man "This place is called Capita Mortua. Not without reason."
+
+    Man "So which of them sent you?"
 
     menu:
 
@@ -121,43 +182,54 @@ label sitting:
 
 label HolyHolies:
 
-    "The man stiffens. The chains at his wrists tighten without being touched."
+    Man "Then you arrive empty, as commanded.\nUntouched by verdict, unbranded by stain."
 
-    Man "The Sanctum beyond sanctums?\nThe Silence that outlives prayer?"
+    #"The man stiffens. The chains at his wrists tighten without being touched."
 
-    "He studies you as one studies a relic dug from a grave."
+    #Man "The Sanctum beyond sanctums?\nThe Silence that outlives prayer?"
 
-    Man "Then you arrive empty, as commanded.\nUntouched by verdict, unbranded by stain.Walk, pilgrim.\nThe city will measure you in due time."
+    #"He studies you as one studies a relic dug from a grave."
+
+    #Man "Then you arrive empty, as commanded.\nUntouched by verdict, unbranded by stain.Walk, pilgrim.\nThe city will measure you in due time."
 
     jump SittingMan01
 
 label JudgeJudgments:
 
-    "The crouched man lowers his head further, as though pressed down by an unseen palm."
+    #"The crouched man lowers his head further, as though pressed down by an unseen palm."
 
-    Man "Ah, The Gavel that falls before the crime.\nThe Eye that convicts the unborn."
+    #Man "Ah, The Gavel that falls before the crime.\nThe Eye that convicts the unborn."
 
-    "A dry laugh escapes him."
+    #"A dry laugh escapes him."
 
-    Man "Then you come already absolved by terror. The scales have leaned in your favor—but do not rejoice. Mercy is a debt that fattens."
+    #Man "Then you come already absolved by terror. The scales have leaned in your favor—but do not rejoice. Mercy is a debt that fattens."
+
+    "The Gavel that falls before the crime. The Eye that convicts the unborn. Then you come already absolved by terror.
+    The scales have leaned in your favor—but do not rejoice. Mercy is a debt that fattens."
 
     jump SittingMan01
 
 label InnocenceInnocence:
 
-    "For the first time, he smiles faintly."
+    #"For the first time, he smiles faintly."
+
+    #Man "Innocence?"
+
+    #"He rises slightly from his crouch, joints cracking "
+
+    #Man "To claim such origin is to confess ignorance of blood. You slouch forward with fragility, yet heavier than you believe"
+    
+    #"The incardinate moon throbs faintly behind him."
+
+    #Man "Could not your geriatric order scrape the marrow of someone more fitting?\nA spine less green.\nOr at least… a man?"
+    
+    #You "…."
 
     Man "Innocence?"
 
-    "He rises slightly from his crouch, joints cracking "
+    "He rises slightly from his crouch, joints cracking."
 
-    Man "To claim such origin is to confess ignorance of blood. You slouch forward with fragility, yet heavier than you believe"
-    
-    "The incardinate moon throbs faintly behind him."
-
-    Man "Could not your geriatric order scrape the marrow of someone more fitting?\nA spine less green.\nOr at least… a man?"
-    
-    You "…."
+    "To claim such origin is to confess ignorance of blood. You crawl forward with fragility, yet heavier than you believe"
 
     jump SittingMan01
 
@@ -172,6 +244,8 @@ label SittingMan01:
 
             $ Player_choice02 = "my birthpain"
 
+            "When overwhelmed, you may cleanse a portion of Guilt."
+
             jump SittingMan01_01
 
         #You may save once at any moment. Loading deletes the file forever.
@@ -179,12 +253,16 @@ label SittingMan01:
 
             $ Player_choice02 = "bred for this purpose"
 
+            "You may save once at any moment. Lodaing deletes the file forever."
+
             jump SittingMan01_02
         
         #When you take a life, there is a slim chance your Guilt will not increase.
         "No one else can carry the Dagger of Our Lady of Sorrow.":
 
             $ Player_choice02 = "the Dagger of Our Lady of Sorrow"
+
+            "When you take a life, there is a slim chance your Guilt will not increase."
 
             jump SittingMan01_03
     
@@ -194,11 +272,12 @@ label SittingMan01_01:
 
     "You do not flinch."
 
-    You "It is my birthpain — bestowed upon me by blood,\nby the blood of my blood.\nA cursed lineage, a sacred anathema.\nI did not choose this wound.\nI inherited it.\nIt gnaws me from within like an unborn twin."
+    You "It is my birthpain, bestowed upon me by blood, by the blood of my blood.\nA cursed lineage, a sacred anathema.
+    I did not choose this wound.\nI inherited it. It gnaws me from within like an unborn twin."
 
     "The crouched man studies your trembling hands."
 
-    Man "Ah. An heir to affliction.\nVery well.\nWhen the weight of your inheritance crushes your ribs,\nyou may spill some of it upon the earth."
+    Man "Ah. An heir to affliction. Very well.\nWhen the weight of your inheritance crushes your ribs, you may spill some of it upon the earth."
 
     "He presses his palm to the dust."
     
@@ -210,19 +289,21 @@ label SittingMan01_02:
 
     "Your voice is steady, disturbingly so."
 
-    You "I was honed through years to do this.\nMolded.\nBred for this singular purpose and nothing else.\nI am a vessel. A burial that walks."
+    You "I was honed through years to do this. Molded. Bred for this singular purpose and nothing else. I am a vessel.
+    A burial that walks."
 
     "The man's lips twitch."
 
-    Man "A creature without surplus… how efficient."
+    Man "A creature without surplus{cps=20}... how efficient."
 
     "He rises an inch higher."
 
-    Man "Then you may defy the flow of fate once.\nYou may carve a moment into permanence. But when you return to it,\nthe past will refuse to remember you again"
+    Man "Then you may defy the flow of fate once. You may carve a moment into permanence.
+    But when you return to it, the past will refuse to remember you again."
 
     "His shadow splits briefly in two before merging."
 
-    Man "An urn can only break once — the world will remember that you hesitated.\nAnd it will not offer you another mercy."
+    Man "An urn can only break once the world will remember that you hesitated. And it will not offer you another mercy."
 
     jump SittingMan02
 
@@ -230,25 +311,26 @@ label SittingMan01_03:
 
     "Your hand brushes the hidden weight at your side."
 
-    You "No one else can carry the Dagger of Our Lady of Stones. It answers only to my pulse, and thirsts only for my circulation"
+    You "No one else can carry the Dagger of Our Lady of Stones. It answers only to my pulse, and thirsts only for my circulation."
 
     "The crouched man inhales through his teeth."
 
-    Man "Interesting.. interesting… fascinating, so young, too young"
+    Man "{cps=20}Interesting... interestin... fascinating, so young, too young."
 
-    "he continues,"
+    "He continues..."
 
-    Man "So I assume that by her granular piety, there's a slim chance that Your soul does not swell with the expected Guilt. The deed settles within you as sediment settles in a drowned cathedral."
+    Man "So I assume that by her granular piety, there's a slim chance that your soul does not swell with the expected Guilt.
+    The deed settles within you as sediment settles in a drowned cathedral."
 
     jump SittingMan02
 
 label SittingMan02:
 
-    Man "Finally, indulge an old sentinel in a useless curiosity.\nThis will not bend your road, nor lighten nor blacken your soul.\nBut words have weight, and I would feel yours."
+    Man "Finally, indulge an old sentinel in a useless curiosity. This will not bend your road, nor lighten nor blacken your soul. But words have weight, and I would feel yours."
 
     "He draws a circle in the sand with a cracked fingernail."
     
-    Man "What compels you to approach this forsaken city — this open crypt that breathes with no lungs?"
+    Man "What compels you to approach this forsaken city, this open crypt that breathes with no lungs?"
 
     menu:
 
@@ -269,13 +351,13 @@ label SittingMan02_01:
 
     scene hand_circle
     
-    You "I come to bring things to an end.\nFor better or for worse."
+    You "I come to bring things to an end. For better or for worse."
 
     Man "Ah. The mercy of cessation."
 
     "He nods, almost tenderly."
 
-    Man "You seek the last page, be warned — endings are gluttonous. To conclude is to deny resurrection"
+    Man "You seek the last page, be warned, endings are gluttonous. To conclude is to deny resurrection."
 
     "He smudges the circle into nothing."
 
@@ -289,7 +371,8 @@ label SittingMan02_02:
 
     "A faint, brittle smile fractures his face."
 
-    Man "Salvation… that arrogant tenderness. You may rescue a fragment, a memory, a single uncorrupted syllable. But understand — salvation is subtraction. To save one thing is to abandon another."
+    Man "Salvation… that arrogant tenderness. You may rescue a fragment, a memory, a single uncorrupted syllable.
+    But understand, salvation is subtraction. To save one thing is to abandon another."
 
     "The circle in the dust remains unbroken, but he draws a single vertical line that splits it into two"
 
@@ -301,13 +384,13 @@ label SittingMan02_03:
     
     You "I come to purify all the putrescent spleens!"
 
-    "The crouched man laughs softly —"
+    "The crouched man laughs softly"
 
     Man "Purification is a beautiful word for violence."
 
     "He is quite for a second" 
 
-    Man "But maybe that's our only, and final hope"
+    Man "{cps=20}But maybe that's our only, and final hope"
 
     "He presses his palm against the circle"
 
@@ -315,11 +398,70 @@ label SittingMan02_03:
 
 label ManEnd:
 
-    Man "Very well.\nEnd it. Save it. Scour it.\nNo one will resist your reason"
+    Man "{cps=15}Very well. End it. Save it. Scour it. No one will resist your reason."
 
     "The gates open with the metal wheezing of cancerous ribcage."
 
-    Man "But know this — You do not get second chances in this place. And child, regardless of the path you take, you will end up alone in the end"
+    Man "But know this, you do not get second chances in this place. And child, regardless of the path you take,
+    you will end up alone in the end"
+
+    menu:
+
+        "Market":
+
+            jump girl_market01
+
+        "Square":
+
+            jump square
+
+        "Cathedral":
+
+            jump cathedral
+
+label square:
+
+
+    window hide
+    $ _dismiss_pause = False
+    scene girl_square with Fade(1.5, 0.5, 1.5)
+    $ renpy.pause(3, hard=True)
+    $ _dismiss_pause = True
+    window auto
+
+    "The breath of others, the pious masses overwhelms yours, too many Gods populate this place,
+    too many fingers fold and break in strange prayers."
+
+    menu:
+
+        "West, Del'ut The Hollow":
+
+            scene girl_square_god03
+
+            "He stands as you read about him, perhaps a little less visceral, his ribs and fascis are devoid of skin or flesh,
+            Del'ut the hollow at the feet of his idol, his teachings are inscribed."
+            
+            "Bleed from thy mouth, from thy ankles,and from thy breasts, And bathe yourselves in blood, and drown in blood, 
+            and sate yourselves with blood."
+            
+        "East, Mal-Ithus The Blind":
+
+            scene girl_square_god01
+
+            "East, Mal-thus the blind is bent almost like a beast, his face is unrecognizable from the burns and scars,
+            at his foot it reads “I am the holiest, but nothing holy remains within me”"
+
+        "South, Tanis, The Cold":
+
+            scene girl_square_god02
+
+            "I still love this world, even its dark places, revelations 6:12-13"
+
+        "North, Nadine, The Hurtless.":
+
+            scene girl_square_goddess
+
+            "I've damned myself but more importantly, I have damned young men who understood nothing but the taste of coffee and tobacco"
 
     scene chained_woman with fade
 
@@ -531,7 +673,7 @@ label martyr_of_hate:
 
     scene girl_looking_market
 
-    "A solitary, crawling aberration in in a place where carcasses hang like vestments And there he is, withdrawn from it all in a monk's parody of seclusion.
+    "A solitary, crawling aberration in a place where carcasses hang like vestments And there he is, withdrawn from it all in a monk's parody of seclusion.
     He resembles a beggar, or something more primitive: a first attempt at man, abandoned mid-creation."
 
     "He has no lower half. From the waist down, his body gives way not to absence—but to growth. A small garden blooms from him; 

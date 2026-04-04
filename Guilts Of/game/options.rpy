@@ -16,6 +16,8 @@ define config.name = _("Guilts Of")
 
 ## Disable the skipping option
 
+define config.implicit_with_none = False
+
 define config.allow_skipping = True
 
 ## Determines if the title given above is shown on the main menu screen. Set

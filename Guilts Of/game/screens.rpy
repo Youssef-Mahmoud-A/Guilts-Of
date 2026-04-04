@@ -4,6 +4,10 @@
 
 init offset = -1
 
+style say_dialogue:
+
+    slow_cps 30
+
 
 ################################################################################
 ## Styles
@@ -109,6 +113,9 @@ screen say(who, what):
 
         text what id "what" 
 
+        if not renpy.shown_window():
+            text "►" at ctc_delay xalign 0.82 yalign 0.74 size 30 color "#fff" font "DejaVuSans.ttf"
+
     ## If there's a side image, display it above the text. Do not display on the
     ## phone variant - there's no room.
     if not renpy.variant("small"):
@@ -167,6 +174,7 @@ style say_dialogue:
     #size 30
 
     adjust_spacing False
+
 
 ## Input screen ################################################################
 ##
@@ -1467,6 +1475,11 @@ screen bubble(who, what):
         default ctc = None
         showif ctc:
             add ctc
+
+transform ctc_delay:
+    alpha 0.0
+    pause 1.0  # delay in seconds
+    alpha 1.0
 
 style bubble_window is empty
 style bubble_namebox is empty
