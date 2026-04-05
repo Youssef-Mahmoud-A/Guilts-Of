@@ -16,6 +16,10 @@ default Grace = 0
 default d4 = 0
 default d6 = 0
 default d10 = 0
+default west = False
+default east = False
+default south = False
+default north = False
 
 # Dice roll function that needs to be called inside the label to be used
 label dice_roll:
@@ -244,7 +248,7 @@ label SittingMan01:
 
             $ Player_choice02 = "my birthpain"
 
-            "When overwhelmed, you may cleanse a portion of Guilt."
+            "{color=#9e0e0e}When overwhelmed, you may cleanse a portion of Guilt.{/color}"
 
             jump SittingMan01_01
 
@@ -253,7 +257,7 @@ label SittingMan01:
 
             $ Player_choice02 = "bred for this purpose"
 
-            "You may save once at any moment. Lodaing deletes the file forever."
+            "{color=#9e0e0e}You may save once at any moment. Lodaing deletes the file forever.{/color}"
 
             jump SittingMan01_02
         
@@ -262,7 +266,7 @@ label SittingMan01:
 
             $ Player_choice02 = "the Dagger of Our Lady of Sorrow"
 
-            "When you take a life, there is a slim chance your Guilt will not increase."
+            "{color=#9e0e0e}When you take a life, there is a slim chance your Guilt will not increase.{/color}"
 
             jump SittingMan01_03
     
@@ -432,9 +436,23 @@ label square:
     "The breath of others, the pious masses overwhelms yours, too many Gods populate this place,
     too many fingers fold and break in strange prayers."
 
+    jump choices
+
+label choices:
+
+    scene girl_square
+
+    if west and east and south and north:
+        
+        menu:
+
+            "Go to the chained woman":
+                
+                jump chainedWoman01
+
     menu:
 
-        "West, Del'ut The Hollow":
+        "West":
 
             scene girl_square_god03
 
@@ -443,35 +461,54 @@ label square:
             
             "Bleed from thy mouth, from thy ankles,and from thy breasts, And bathe yourselves in blood, and drown in blood, 
             and sate yourselves with blood."
+
+            $ west = True
+
+            jump choices
             
-        "East, Mal-Ithus The Blind":
+        "East":
 
             scene girl_square_god01
 
             "East, Mal-thus the blind is bent almost like a beast, his face is unrecognizable from the burns and scars,
             at his foot it reads “I am the holiest, but nothing holy remains within me”"
 
-        "South, Tanis, The Cold":
+            $ east = True
+
+            jump choices
+
+        "South":
 
             scene girl_square_god02
 
             "I still love this world, even its dark places, revelations 6:12-13"
 
-        "North, Nadine, The Hurtless.":
+            $ south = True
+
+            jump choices
+
+        "North":
 
             scene girl_square_goddess
 
             "I've damned myself but more importantly, I have damned young men who understood nothing but the taste of coffee and tobacco"
 
-    scene chained_woman with fade
+            $ north = True
 
-    jump chainedWoman01
+            jump choices
+
+
 
 label chainedWoman01:
 
-    "You see a woman with a small family of medium, moribund rocks lashed to her bent back, fastened by rusting bronze chains that trail forward to wind loosely around her bruised wrists.In her pale, 
-    trembling hands she cradles two extra rock, as though they were something breakable, something beloved.  Every time she tries to stand straight the weights pull her down and she releases a soft, 
-    almost inaudible moan of pain.\nShe remains bowed, she doesn't look at you, or she can't look at you."
+    scene chained_woman with Fade(1.5, 0.5, 1.5)
+
+    "You see a woman with a small family of medium, moribund rocks lashed to her bent back, fastened by rusting bronze chains that trail forward to wind loosely around her bruised wrists. In her pale, trembling hands she cradles two extra rock, as though they were something breakable, something beloved."
+    
+
+    scene chained_woman0
+    
+    "Every time she tries to stand straight the weights pull her down and she releases a soft, almost inaudible moan of pain. She remains bowed, she doesn't look at you, or she can't look at you."
 
     menu:
 
@@ -503,24 +540,19 @@ label chainedWoman02:
         
         "I not understand what you are saying":
 
-            Chained "I am asking if you, fledgling thing— you whose voice has not yet cracked upon real grief, whose blood has not learned the taste of ash. What salvation do you presume to offer me?
-            \nWhat limb of the broken world have you ever lifted? For seven years I have borne the cairn of my husband, my mother,and the child who perished unnamed within me. Seven years more are decreed."
+            Chained "I am asking if you, fledgling thing— you whose voice has not yet cracked upon real grief, whose blood has not learned the taste of ash. What salvation do you presume to offer me?\nWhat limb of the broken world have you ever lifted? For seven years I have borne the cairn of my husband, my mother,and the child who perished unnamed within me. Seven years more are decreed."
 
             jump chainedWoman03
         
         "I have nothing, but the dagger on my back.":
 
-            Chained "So you bring me a cruel remedy, then where did you get the gall to inquire after my weight? creature with a whiny voice, and beleaguered blood,You have known inconvenience, not ruin. 
-            For seven years I have borne the cairn of my husband, my mother,and the child who perished unnamed within me. Seven years more are decreed."
+            Chained "So you bring me a cruel remedy, then where did you get the gall to inquire after my weight? creature with a whiny voice, and beleaguered blood,You have known inconvenience, not ruin. For seven years I have borne the cairn of my husband, my mother,and the child who perished unnamed within me. Seven years more are decreed."
 
             jump chainedWoman03
 
         "I can help remove the rocks off your back.":
             
-            Chained "And what inherent mercy compels you, child of exalted roots, that you might carry the dust of others and not be buried with it?
-            \nFor seven years I have borne the cairn of my husband, my mother,and the child who perished unnamed within me. Seven years more are decreed.
-            \nAnd all through time we had sufferers. And if it's our birthright to suffer then let it be. And if it's our blight to be lied to continually, 
-            blight growing more, then it's also our right. So see the mucous and the veins thicken."
+            Chained "And what inherent mercy compels you, child of exalted roots, that you might carry the dust of others and not be buried with it?\nFor seven years I have borne the cairn of my husband, my mother,and the child who perished unnamed within me. Seven years more are decreed.\nAnd all through time we had sufferers. And if it's our birthright to suffer then let it be. And if it's our blight to be lied to continually, blight growing more, then it's also our right. So see the mucous and the veins thicken."
 
             $ Guilt -= 1
 
@@ -652,15 +684,13 @@ label martyr_of_hate:
     
     scene girl_market_walk01  
 
-    "As you pass, their stares pierce you—not with curiosity, but with a dull, forensic knowing, Your skull, 
-    not yet fully ripened into its final shape, draws their gaze like a wound draws flies."
+    "As you pass, their stares pierce you—not with curiosity, but with a dull, forensic knowing, Your skull, not yet fully ripened into its final shape, draws their gaze like a wound draws flies."
 
     "No one speaks to you. No one touches you."
 
     scene girl_market_walk02
 
-    "Only murmurs, thin, papery whispers, flutter in your wake.\nAll your preparation, your childhood's severities, 
-    your youth's disciplines, the catechisms etched into atom and nerve, collapse here into insufficiency."
+    "Only murmurs, thin, papery whispers, flutter in your wake.\nAll your preparation, your childhood's severities, your youth's disciplines, the catechisms etched into atom and nerve, collapse here into insufficiency."
 
 
     "You were honed for this, filed down, sanctified, emptied, and refilled until your very marrow recited it and still, it is not enough.
@@ -673,11 +703,9 @@ label martyr_of_hate:
 
     scene girl_looking_market
 
-    "A solitary, crawling aberration in a place where carcasses hang like vestments And there he is, withdrawn from it all in a monk's parody of seclusion.
-    He resembles a beggar, or something more primitive: a first attempt at man, abandoned mid-creation."
+    "A solitary, crawling aberration in a place where carcasses hang like vestments And there he is, withdrawn from it all in a monk's parody of seclusion.He resembles a beggar, or something more primitive: a first attempt at man, abandoned mid-creation."
 
-    "He has no lower half. From the waist down, his body gives way not to absence—but to growth. A small garden blooms from him; 
-    Stems, roots, pale blossoms pushing outward where organs should have continued, anchoring him into the earth as though he had chosen to be planted rather than buried."
+    "He has no lower half. From the waist down, his body gives way not to absence—but to growth. A small garden blooms from him; Stems, roots, pale blossoms pushing outward where organs should have continued, anchoring him into the earth as though he had chosen to be planted rather than buried."
 
     scene elder01
 
@@ -729,20 +757,17 @@ label martyr_of_hate:
 
     "His lips twitch, remembering."
 
-    Elder "I built an arsenal from it. Not of iron, no, but of men. Real men. 
-    Men swollen with circulation, with surplus, with the obscene generosity of flowing life."
+    Elder "I built an arsenal from it. Not of iron, no, but of men. Real men. Men swollen with circulation, with surplus, with the obscene generosity of flowing life."
 
     "His voice sharpens, almost proud."
 
-    Elder "Men who found no satisfaction in women, nor in books. 
-    Men whose hunger coiled like vipers, driving them beyond the last ruins of reason."
+    Elder "Men who found no satisfaction in women, nor in books. Men whose hunger coiled like vipers, driving them beyond the last ruins of reason."
 
     scene girl_elder_head
 
     Elder "A brotherhood of arteries. A congregation of overflow."
 
-    Elder "They could not live on bread. They could not drink wine. Poetry did not touch them. 
-    Beauty did not slow them. They were abundance made flesh, Angels, at times. Demons, more often."
+    Elder "They could not live on bread. They could not drink wine. Poetry did not touch them. Beauty did not slow them. They were abundance made flesh, Angels, at times. Demons, more often."
 
     Elder "And they longed, for the crucifix, and I gave them death."
 
@@ -811,8 +836,7 @@ label commander_answer:
 
     Elder "Like a dog catching fresh game. The morning after the burning of Laith Kheifar. I looked at the sky, and felt nothing but distance."
 
-    Elder "For nearly four centuries, no rain fell—not a single drop. Then one night, in the east, the heavens broke. 
-    It rained as if only heaven could bear such weight. They say God could no longer hold back his tears"
+    Elder "For nearly four centuries, no rain fell—not a single drop. Then one night, in the east, the heavens broke. It rained as if only heaven could bear such weight. They say God could no longer hold back his tears"
 
     Elder "You smell of fire and salt. Of flowering corpses. Of bells tolling over open earth, and shovels striking wet soil in the dark."
 
@@ -822,18 +846,15 @@ label commander_answer:
 
     Elder "Seven returned. Seven men out of twelve thousand."
 
-    Elder "I sowed the womb of the earth with blood and tears; I inseminated Gaia with ruin. I brought grief to their gods and desolation to 
-    their houses, and in the night, they come, twelve thousand footfalls rising from the dark. their faces split open in agony."
+    Elder "I sowed the womb of the earth with blood and tears; I inseminated Gaia with ruin. I brought grief to their gods and desolation to their houses, and in the night, they come, twelve thousand footfalls rising from the dark. their faces split open in agony."
 
     Elder "I lived as I knew how, and now my sins unmake me, thread by thread, sinew by sinew."
 
-    Elder "So… you. Slave of Morthiel. You stink of christened alumina and sanctified dust. 
-    Have you come at last to finish what was decreed? To bend yourself to command?"
+    Elder "So… you. Slave of Morthiel. You stink of christened alumina and sanctified dust. Have you come at last to finish what was decreed? To bend yourself to command?"
 
     Elder "I have endured here eight hundred years. I counted each one."
 
-    Elder "Did they teach you Arabic in that myrrh-plagued cathedral of yours? Did they whisper to you that khalas is both ending and 
-    deliverance—that enough is the only mercy left to man? There is no peace in persistence. Only delay."
+    Elder "Did they teach you Arabic in that myrrh-plagued cathedral of yours? Did they whisper to you that khalas is both ending and deliverance that enough is the only mercy left to man? There is no peace in persistence. Only delay."
 
     "You instinctively get down to his level, as he open his hands to you, begging for your touch."
 
